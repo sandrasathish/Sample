@@ -1,0 +1,30 @@
+@import '../color';
+
+a,
+a:visited {
+  text-decoration: none;
+  color: $blue;
+  & .underline,
+  &.underline {
+    @include linear-gradient(top, transparent 60%, $blue 40%);
+  }
+}
+a:hover {
+  color: $black;
+  transition: color 0.1s linear;
+}
+a:hover .underline,
+a.underline:hover {
+  @include linear-gradient(top, transparent 60%, $black 40%);
+  transition: background-color 0.1s linear;
+}
+a:active .underline,
+a.underline:active {
+  color: $alizarin;
+  @include linear-gradient(top, transparent 60%, $alizarin 40%);
+}
+
+a.button:active,
+.button:active {
+  background-color: $alizarin !important;
+}

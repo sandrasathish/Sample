@@ -1,0 +1,36 @@
+@import '../color';
+@import '../type/family';
+
+// Pretty much copied from Bootstrap
+code,
+pre {
+  font-family: $font-family-monospace;
+}
+// Inline code
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: $dove-gray;
+  background-color: $clouds;
+  border-radius: 3px;
+}
+// Blocks of code
+pre {
+  display: block;
+  padding: 16px;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: $dove-gray;
+  background-color: $clouds;
+  border-radius: 3px;
+}
+// Account for some code outputs that place code tags in pre tags
+.panel code,
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head lang="en">
+        <meta charset="utf-8">
+        <title>Sample</title>  
+        <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script>
+<script type="text/javascript" src="bower_components/ng-context-menu/dist/ng-context-menu.js"></script>
+  
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+   
+    <link href="bootstrap.min.css" rel="stylesheet">  
+   
+   		
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
+           
+    
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body ng-controller="MyCtrl">
+	
+	 
+  
+
+<div context-menu class="panel panel-default position-fixed"
+     data-target="menu-{{ $index }}"
+     ng-class="{ 'highlight': highlight, 'expanded' : expanded }">	 
+	  <tabset >
+    <tab heading="Status" >  <div >
+   <div class="gridStyle" ng-grid="gridOptions" >
+   <div ></div>  
+   </div> </div> 
+      </tab>	 
+    <tab heading="Bill Reader Status"> <div >
+   <div class="gridStyle" ng-grid="gridOptions1" >
+   </div> </div> </tab>
+    <tab heading="Service Events">Service content</tab>
+	 <tab heading="Activity Today">Activity content</tab>
+    <tab heading="EFS Activity">EFS Activity content</tab>
+    <tab heading="CDU">CDU content</tab>
+	 <tab heading="Engine Room">Engine Room content</tab>
+    <tab heading="Kisoks">Kisoks content</tab>
+    <tab heading="Installations">Installations content</tab>
+	 <tab heading="Locations">Locations content</tab>
+    <tab heading="Regions and Hubs">Regions and Hubs content</tab>
+    <tab heading="Compliance Hubs">Compliance content</tab>
+	 </div >
+	
+         <div class="dropdown position-fixed" id="menu-{{ $index }}">
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a class="pointer" role="menuitem" tabindex="1"
+         ng-click="panel.highlight = true">
+         Locations Details..
+      </a>
+    </li>    
+    <li>
+      <a class="pointer" role="menuitem" tabindex="2"
+         ng-click="panel.highlight = false">
+         Map This Location..
+      </a>
+    </li>
+    <li>
+      <a class="pointer" role="menuitem" tabindex="3"
+         ng-click="panel.expanded = true">
+         Ping History
+      </a>
+    </li>
+    <li>
+      <a class="pointer" role="menuitem" tabindex="4"
+         ng-click="panel.expanded = false">
+        Login via VNC
+      </a>
+    </li>
+    <li>
+      <a class="pointer" role="menuitem" tabindex="5"
+         ng-click="addPanel()">
+         Service History
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/ianwalter/ng-context-menu"
+         role="menuitem"
+         tabindex="-1">
+         Bill Reader History
+      </a>
+    </li>
+  </ul>
+</div>
+    </body>
+</html>

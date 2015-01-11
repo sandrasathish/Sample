@@ -1,0 +1,12 @@
+@import '../color';
+
+.panel {
+  display: block;
+  border-radius: 3px;
+  background-color: $clouds;
+}
+
+.panel-outline {
+  border-radius: 3px;
+  border: 2px solid $clouds;
+}

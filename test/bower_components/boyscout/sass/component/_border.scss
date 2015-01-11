@@ -1,0 +1,16 @@
+@import '../color';
+
+@each $color in $colors {
+  // Damn libsass doesn't support multiple assignment
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+
+  .border-#{$name}-hover:hover,
+  .border-#{$name} {
+    color: $value;
+  }
+}
+
+.border-radius-3 {
+  border-radius: 3px;
+}

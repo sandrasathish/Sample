@@ -1,0 +1,16 @@
+@import '../color';
+
+@each $color in $colors {
+  // Damn libsass doesn't support multiple assignment
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+
+  .background-#{$name}-hover:hover,
+  .background-#{$name} {
+    background-color: $value !important;
+  }
+}
+
+.background-transparent {
+  background-color: transparent !important;
+}

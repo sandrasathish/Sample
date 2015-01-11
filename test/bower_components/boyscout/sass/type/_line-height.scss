@@ -1,0 +1,11 @@
+@import 'size';
+
+@each $font-size in $font-sizes {
+  // Damn libsass doesn't support multiple assignment
+  $name: nth($font-size, 1);
+  $value: nth($font-size, 2);
+
+  .line-height-#{$name} {
+    line-height: $value;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "boyscout",
+  "version": "0.2.5",
+  "description": "A collection of helper CSS classes so you'll always be prepared.",
+  "keywords": [
+    "css",
+    "framework",
+    "helper",
+    "classes",
+    "grid"
+  ],
+  "homepage": "http://github.com/ianwalter/boyscout",
+  "main": "sass/base.scss",
+  "authors": [
+    "Ian Kennington Walter (http://ianvonwalter.com)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "index.html",
+    "gulpfile.js",
+    "package.json",
+    "examples"
+  ],
+  "dependencies": {},
+  "_release": "0.2.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.5",
+    "commit": "e7a4dc891d9d80292b6a92c776d978c92354c16e"
+  },
+  "_source": "git://github.com/ianwalter/boyscout.git",
+  "_target": "~0.2.5",
+  "_originalSource": "boyscout",
+  "_direct": true
+}

@@ -1,0 +1,57 @@
+@import '../color';
+@import 'size';
+
+@mixin underline($color: $dove-gray, $line-offset: 1.2, $line-size: 0.15) {
+  @include linear-gradient(top, transparent 60%, $color 40%);
+  background-repeat: repeat-x;
+  background-size: #{$line-size}rem #{$line-size}rem;
+  background-position: 0 #{$line-offset}rem !important;
+  text-decoration: none;
+  .lt-ie10 & { // because old IE can't handle it
+    background: none;
+    text-decoration: underline;
+  }
+}
+
+.underline {
+  @include underline();
+}
+
+@each $color in $colors {
+  // Damn libsass doesn't support multiple assignment
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+
+  .color-#{$name} .underline,
+  .color-#{$name}.underline,
+  .underline-#{$name}-hover:hover,
+  .underline-#{$name} {
+    @include underline($value);
+  }
+}
+
+@each $size in $font-sizes {
+  $name: nth($size, 1);
+  $value: nth($size, 2);
+  $line-position: $value + ($value * 1/5);
+  $line-size: $value * 1/6;
+
+//  @if $name == '0-8' {
+//    small [class^="underline"],
+//    small[class^="underline"],
+//    small [class*=" underline"],
+//    small[class*=" underline"],
+//  }
+  .font-size-#{$name} [class^="underline"],
+  .font-size-#{$name}[class^="underline"],
+  .font-size-#{$name} [class*=" underline"],
+  .font-size-#{$name}[class*=" underline"] {
+    background-position: 0 #{$line-position} !important;
+    background-size: #{$line-size} #{$line-size};
+
+    &:hover {
+      background-position: 0 #{$line-position} !important;
+      background-size: #{$line-size} #{$line-size};
+    }
+  }
+}
